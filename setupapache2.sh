@@ -23,7 +23,8 @@ else
 fi
 
 chown -R $user:$group /etc/$app
-for dir in /var/lib /var/run /var/log; do
-  mkdir -p $dir/$app
+for dir in /var/lib /var/run /var/log; 
+do
+   mkdir -p $dir/$app
   chown -R $user:$group $dir/$app
 done
