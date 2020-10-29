@@ -10,8 +10,8 @@ LABEL vendor='OpsMx'
 
 WORKDIR /opt/deck
 COPY docker        /opt/deck/docker
-COPY docker/runapache2.sh docker/run-apache2.sh
-COPY docker/setupapache2.sh docker/setup-apache2.sh
+COPY docker/run-apache2.sh docker/run-apache2.sh
+COPY docker/setup-apache2.sh docker/setup-apache2.sh
 
 RUN chmod -R 777 docker/setup-apache2.sh
 RUN docker/setup-apache2.sh
