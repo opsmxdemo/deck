@@ -42,10 +42,11 @@ then
     rm $conf/ssl.conf
   fi
 else
-  # on RHEL it's enabled through config
   if [ ! -e "/etc/redhat-release" ]; then
     a2enmod ssl
   fi
+  # on RHEL it's enabled through config
+  rm $conf/ssl.conf
   cp docker/spinnaker.conf.ssl spinnaker.conf
   sed -ie 's|{%DECK_CERT_PATH%}|'$_DECK_CERT_PATH'|g' spinnaker.conf
   sed -ie 's|{%DECK_KEY_PATH%}|'$_DECK_KEY_PATH'|g' spinnaker.conf
